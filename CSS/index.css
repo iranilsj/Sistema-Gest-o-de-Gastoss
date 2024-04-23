@@ -1,0 +1,47 @@
+body{
+    background: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+}
+input, button{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+}
+button{
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+button[disabled]{
+    opacity: 0.2;
+}
+button:hover{
+    background-color: cadetblue;
+}
+.formulario{
+    background-color: rgb(213, 255, 255);
+    border: 5px solid cadetblue;
+    padding: 40px;
+    border-radius: 10px;
+}
+.entrar{
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid black;
+    color: green;
+}
+.recuperar{
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid black;
+    color: red;
+}
+.registro{
+    font-weight: bold;
+    background-color: white;
+    color: green;
+    border: 1px solid black;
+}

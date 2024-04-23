@@ -1,0 +1,25 @@
+FRONTEND{
+    HTML
+    CSS
+    JAVASCRIPT
+}
+BACKEND{
+    NODEJS
+}
+
+VERSOES FUTURAS
+
+FRONTEND {
+    ANGULAR
+    REACT
+    IONIC
+    FLUTTER
+}
+
+BACKEND {
+    + NESTJS
+    + JAVA
+    + C#
+    + PHP
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMG/img-login.png" type="image/x-icon"> <!-- ICONE DA ABA DO NAVEGADOR-->
+    <!--LINKAR CSS DA PAGINA-->
+    <link rel="stylesheet" href="CSS/index.css">
+    <!--LINKAR JAVASCRIPT DA PAGINA-->
+    <script src="JAVASCRIPT/index.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <form>
+        <div class="formulario">
+            <div>
+                <div>
+                    <center><label>E-mail</label></center>
+                </div>
+                <input type="email" name="email" id="email"  onchange="validateFields()" placeholder="seu@email.com" />
+            </div>
+            <div>
+                <div>
+                    <center><label>Senha</label></center>
+                </div>
+                <input type="password" name="password" placeholder="Senha" />
+            </div>
+            <div>
+                <div>
+                    <button type="button" class="entrar" disabled="true">Entrar</button>
+                </div>
+                <button type="button" class="recuperar" id="recover-password-button" disabled="true">Recuperar Senha</button>
+            </div>
+            <div>
+                <button type="button" class="registro">Registrar</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
