@@ -19,17 +19,17 @@
                 <div>
                     <center><label>E-mail</label></center>
                 </div>
-                <input type="email" name="email" id="email"  onchange="validateFields()" placeholder="seu@email.com" />
+                <input type="email" name="email" id="email"  onchange="validateFields('adm@gmail.com')" placeholder="seu@email.com" />
             </div>
             <div>
                 <div>
                     <center><label>Senha</label></center>
                 </div>
-                <input type="password" name="password" placeholder="Senha" />
+                <input type="password" name="password" id="password" onchange="validateFields('1234567')"  placeholder="Senha" />
             </div>
             <div>
                 <div>
-                    <button type="button" class="entrar" disabled="true">Entrar</button>
+                    <button type="button" class="entrar" id="login-button" disabled="true">Entrar</button>
                 </div>
                 <button type="button" class="recuperar" id="recover-password-button" disabled="true">Recuperar Senha</button>
             </div>
@@ -41,6 +41,3 @@
 </body>
 
 </html>
-
-
-Sistema-Gest-o-Gastos
