@@ -1,97 +1,75 @@
-    // VALIDACAO DE EMAIL PARA RECUPERAR SENHA
-    function validateFields() {
-        //constante para validar e mail
-        const emailValid = isEmailValid();
-        document.getElementById('recover-password-button').disabled = !emailValid;
-        //constante para validar senha
-        const passwordValid = isPasswordValid();
-        document.getElementById('login-button').disabled = !emailValid || !passwordValid;
 
-    }
+//CHAMAR A FUNCAO TOGGLE LIGADO/DESLIGADO
+function onChangeEmail() {
+    toggleButtonsDisable();
+    toggleEmailErro();
+}
+function onChangePassword() {
+    toggleButtonsDisable();
+    togglePasswordErro();
+}
 //VERIFICAR SE O EMAIL É VÁLIDO
-    function isEmailValid(){
-        const email = document.getElementById("email").value;
-        if(!email) {
-            return false;
-        } 
-        return validateEmail(email);
-    }
-
-    // VALIDACAO DA SENHA 
-    function isPasswordValid(){
-        const password = document.getElementById('password').value;
-        if(!password){
-            return false;
-        }
-        return true;
-    }
-
-    // VERIFICAR SE O EMAIL É VÁLIDO
-    function validateEmail(email) {
-        return /\S+@\S+\.\S/.test(email);
-    }
-
-
-
-
-
-/*// VALIDACAO DA PAGINA DE LOGIN
-function onChageEmail() {
-    toggleButtonsDisable();
-    toggleEmailErrors();
-}
-
-function onChagePasword() {
-    toggleButtonsDisable();
-    togglePasswordErros();
-}
-
 function isEmailValid() {
-    const email = form.email().value;
+    const email = form.email().value; 
     if (!email) {
         return false;
     }
     return validateEmail(email);
 }
 
-//MOSTRAR OU ESCONDER OS ERRO DE EMAIL QUANDO FOR NECESSARIO
-function toggleEmailErrors() {
-    const email = form.email().value;
-    form.emailRequiredErro().style.display = email ? "none" : "block";
 
-    form.emailRequiredErro().style.display = validateEmail(email) ? "none" : "block";
-    
-}
-
-//MOSTRAR OU ESCONDER OS ERRO DE SENHA
-function togglePasswordErros() {
-    const password = form.password().value;
-  
-        form.passwordRequiredErro().style.display = password ? "none" : "block";
-}
-
+// VALIDACAO DE EMAIL PARA RECUPERAR SENHA
+// TOGGLE LIGADO/DESLIGADO
 function toggleButtonsDisable() {
+    //constante para validar e mail
     const emailValid = isEmailValid();
     form.recoverPassword().disabled = !emailValid;
-
+    //constante para validar senha
     const passwordValid = isPasswordValid();
     form.loginButton().disabled = !emailValid || !passwordValid;
+
 }
 
+// MENSASGEM DE ERRO PARA VALIDACAO DE EMAIL
+function toggleEmailErro() {
+    const email = document.getElementById('email').value;
+    //mensagen para campo email em branco
+    if(!email){
+        form.emailRequiredErro().style.display = "block";
+    } else {
+        form.emailRequiredErro().style.display = "none";
+    } // mensagem de email invalido
+    if (validateEmail(email)){
+        form.emailInvalidErro().style.display = "none";
+    }else{
+        form.emailInvalidErro().style.display = "block";        
+    }
+}
+
+// VERIFICAR SE A SENHA É VÁLIDA
 function isPasswordValid() {
-    const password = form.password().value
+    const password = form.password().value;
     if (!password) {
         return false;
     }
     return true;
 }
 
+// MENSASGEM DE ERRO PARA VALIDACAO DE EMAIL E SENHA
+function togglePasswordErro(){
+    const password = form.password().value;
+    if(!password){
+        form.passwordRequiredErro().style.display = "block";
+    }else{ 
+        form.passwordRequiredErro().style.display = "none";
+    }
+}
 const form = {
     email: () => document.getElementById('email'),
-    emailRequiredErro: () => document.getElementById('email-required-error'),
-    emailInvalidErro: () => document.getElementById('email-invalid-error'),
+    emailRequiredErro: () => document.getElementById('email-required-erro'),
+    emailInvalidErro: () => document.getElementById('email-invalid-erro'),
     loginButton: () => document.getElementById('login-button'),
     password: () => document.getElementById('password'),
-    passwordRequiredErro: () => document.getElementById('password-required-error'),
+    passwordRequiredErro: () => document.getElementById('password-required-erro'),
     recoverPassword: () => document.getElementById('recover-password-button')
-} */
+}
