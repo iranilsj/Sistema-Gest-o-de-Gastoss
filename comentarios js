@@ -1,0 +1,4 @@
+// pegar o valor do campo de e mail
+    // verificar se o email nao é vazio e se é válido
+    //se verdadeiro, habilitar o botao de recuperar senha 
+    // se falto,desabilitar o botao de recuperar senha 

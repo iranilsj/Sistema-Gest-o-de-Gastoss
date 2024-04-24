@@ -45,3 +45,7 @@ button:hover{
     color: green;
     border: 1px solid black;
 }
+.erro{
+    color: red;
+    display: none;
+}
