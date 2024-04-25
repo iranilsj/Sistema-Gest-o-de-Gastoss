@@ -34,18 +34,33 @@
             </div>
             <div>
                 <div>
-                    <button type="button" class="entrar" id="login-button" disabled="true">Entrar</button>
+                    <button type="button" class="entrar" id="login-button" disabled="true" onclick="login()">Entrar</button>
                 </div>
                 <button type="button" class="recuperar" id="recover-password-button" disabled="true">Recuperar
                     Senha</button>
             </div>
             <div>
-                <button type="button" class="registro">Registrar</button>
+                <button type="button" class="registro" onclick="registro()">Registrar</button>
             </div>
         </div>
     </form>
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+<script>// Configuração do Firebase do seu aplicativo da web
+    const firebaseConfig = {
+      apiKey: "AIzaSyButG-PhXLoa46-q6_kh22BIg6U0tqa2qw",
+      authDomain: "sistema-controle-de-gastos.firebaseapp.com",
+      projectId: "sistema-controle-de-gastos",
+      storageBucket: "sistema-controle-de-gastos.appspot.com",
+      messagingSenderId: "154981277737",
+      appId: "1:154981277737:web:3137a363c0f69676a8fc38"
+    };
 
+    firebase.initializeApp(firebaseConfig);
+
+    
+    </script>
 
 </html>

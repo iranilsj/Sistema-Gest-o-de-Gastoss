@@ -10,16 +10,14 @@ function onChangePassword() {
 }
 //VERIFICAR SE O EMAIL É VÁLIDO
 function isEmailValid() {
-    const email = form.email().value; 
+    const email = form.email().value;
     if (!email) {
         return false;
     }
     return validateEmail(email);
 }
 
-
-// VALIDACAO DE EMAIL PARA RECUPERAR SENHA
-// TOGGLE LIGADO/DESLIGADO
+// VALIDACAO DE EMAIL PARA RECUPERAR SENHA - TOGGLE LIGADO/DESLIGADO
 function toggleButtonsDisable() {
     //constante para validar e mail
     const emailValid = isEmailValid();
@@ -34,15 +32,15 @@ function toggleButtonsDisable() {
 function toggleEmailErro() {
     const email = document.getElementById('email').value;
     //mensagen para campo email em branco
-    if(!email){
+    if (!email) {
         form.emailRequiredErro().style.display = "block";
     } else {
         form.emailRequiredErro().style.display = "none";
     } // mensagem de email invalido
-    if (validateEmail(email)){
+    if (validateEmail(email)) {
         form.emailInvalidErro().style.display = "none";
-    }else{
-        form.emailInvalidErro().style.display = "block";        
+    } else {
+        form.emailInvalidErro().style.display = "block";
     }
 }
 
@@ -56,11 +54,11 @@ function isPasswordValid() {
 }
 
 // MENSASGEM DE ERRO PARA VALIDACAO DE EMAIL E SENHA
-function togglePasswordErro(){
+function togglePasswordErro() {
     const password = form.password().value;
-    if(!password){
+    if (!password) {
         form.passwordRequiredErro().style.display = "block";
-    }else{ 
+    } else {
         form.passwordRequiredErro().style.display = "none";
     }
 }
@@ -72,4 +70,24 @@ const form = {
     password: () => document.getElementById('password'),
     passwordRequiredErro: () => document.getElementById('password-required-erro'),
     recoverPassword: () => document.getElementById('recover-password-button')
+}
+function  login(){
+    firebase.auth().signInWithEmailAndPassword(
+        form.email().value, form.password().value
+    ).then(response =>{
+        window.location.href = "HTML/inicio.html";
+    }).catch(error =>{
+        alert(getErrorMessage(error))
+    });
+}
+
+function getErrorMessage(error){
+    if (error.code == "auth/invalid-credential"){
+        return "Usuário não Encontrado";
+    }
+    return error.message;
+}
+
+function registro(){
+    window.location.href = "HTML/registro.html";
 }
